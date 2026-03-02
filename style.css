@@ -287,3 +287,25 @@ to{opacity:1; transform:translateY(0);}
 .map-btn:hover {
     transform: scale(1.05);
 }
+
+/* BOTON SOBRE TODO */
+.rsvp-btn{
+    position: relative;
+    z-index: 10;
+}
+
+/* MEJORAS MOVIL */
+@media(max-width:768px){
+
+    .hero h2{font-size:2.2rem;}
+    .frase{font-size:1.2rem;}
+    .info p{font-size:1.2rem;}
+
+    .main{
+        padding:80px 15px;
+    }
+
+    .video-bg{
+        object-position:center;
+    }
+}
