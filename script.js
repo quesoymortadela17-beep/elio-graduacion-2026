@@ -8,7 +8,9 @@ const main = document.getElementById("main");
 /* INICIO */
 startBtn.addEventListener("click", () => {
 
+    video.muted = false; // activa sonido
     video.play();
+
     overlay.classList.add("hidden");
     intro.classList.remove("hidden");
 
@@ -33,7 +35,9 @@ setInterval(() => {
     const distance = eventDate - now;
 
     if (distance < 0) {
-        document.getElementById("eventMessage").innerHTML = "🎉 ¡Hoy es el gran día! 🎉";
+        document.getElementById("eventMessage").innerHTML =
+            "🎉 ¡Hoy es el gran día! 🎉";
+
         if (!fireworksStarted) {
             startFireworks();
             fireworksStarted = true;
@@ -59,8 +63,12 @@ setInterval(() => {
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 let particles = [];
 
@@ -74,6 +82,7 @@ for (let i = 0; i < 60; i++) {
 }
 
 function animate() {
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     particles.forEach(p => {
@@ -88,7 +97,6 @@ function animate() {
 
     requestAnimationFrame(animate);
 }
-
 animate();
 
 /* FUEGOS */
@@ -103,6 +111,7 @@ function startFireworks() {
     let fireworks = [];
 
     function createFirework() {
+
         let x = Math.random() * fwCanvas.width;
         let y = Math.random() * fwCanvas.height / 2;
 
@@ -143,7 +152,7 @@ function startFireworks() {
     animateFireworks();
 }
 
-/* BOTÓN FORMULARIO CORRECTO */
+/* BOTÓN FORMULARIO */
 const rsvpBtn = document.getElementById("rsvpBtn");
 
 if (rsvpBtn) {

@@ -309,3 +309,26 @@ to{opacity:1; transform:translateY(0);}
         object-position:center;
     }
 }
+
+/* VIDEO RESPONSIVE REAL */
+.video-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -3;
+}
+
+/* AJUSTE ESPECIAL PARA CELULAR */
+@media (max-width:768px){
+    .video-bg{
+        width: auto;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
