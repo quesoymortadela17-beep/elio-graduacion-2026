@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graduación 2026 - Eliu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- VIDEO -->
+<video id="videoBg" class="video-bg" playsinline>
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+<!-- MUSICA -->
+<audio id="musicaBg">
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PARTICULAS -->
+<canvas id="particles"></canvas>
+
+<!-- FUEGOS -->
+<canvas id="fireworks"></canvas>
+
+<!-- BOTON INICIO -->
+<div class="sound-overlay" id="soundOverlay">
+    <button id="startBtn">🎓 Entrar a la Invitación</button>
+</div>
+
+<!-- INTRO -->
+<div class="intro hidden" id="intro">
+    <h1 class="logo shine">Eliu</h1>
+    <p class="presenta">Invita a su graduación</p>
+</div>
+
+<!-- CONTENIDO -->
+<div class="main hidden" id="main">
+
+<section class="hero">
+    <h2>Graduación 2026</h2>
+    <p class="frase">Después de años de esfuerzo… llegó el gran día.</p>
+</section>
+
+<section class="info">
+    <p>📅 13 de marzo</p>
+    <p>🕒 7:00 PM</p>
+</section>
+
+<section class="countdown">
+    <h3>Faltan:</h3>
+    <div class="time-boxes">
+        <div><span id="days">0</span><small>Días</small></div>
+        <div><span id="hours">0</span><small>Horas</small></div>
+        <div><span id="minutes">0</span><small>Min</small></div>
+        <div><span id="seconds">0</span><small>Seg</small></div>
+    </div>
+    <p id="eventMessage"></p>
+</section>
+
+<section class="dresscode">
+    <h3>Dress Code</h3>
+    <p>Vestimenta Casual 👕👖</p>
+</section>
+
+<section class="sobre">
+    <h3>Sobre Cerrado</h3>
+    <p>Si deseas obsequiar algo, será recibido en sobre cerrado 💌</p>
+</section>
+
+<section class="location">
+    <h3>Ubicación</h3>
+    <p>615 La Libertad</p>
+    <p>Calle 42 entre El Oro y Vacas Galindo</p>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=615+La+Libertad"
+       target="_blank"
+       class="map-btn">
+        📍 Ver Ubicación
+    </a>
+</section>
+
+<section class="rsvp">
+    <h3>Confirmar Asistencia</h3>
+    <button class="rsvp-btn" id="rsvpBtn">Confirmar Ahora 🎓</button>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
