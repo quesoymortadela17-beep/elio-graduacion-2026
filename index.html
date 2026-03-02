@@ -10,9 +10,10 @@
 
 <body>
 
-<!-- VIDEO -->
-<video id="videoBg" class="video-bg" playsinline>
-    <source src="video.mp4" type="video/mp4">
+<!-- VIDEO RESPONSIVE -->
+<video id="videoBg" class="video-bg" muted playsinline>
+    <source src="video-vertical.mp4" type="video/mp4" media="(max-width:768px)">
+    <source src="video-horizontal.mp4" type="video/mp4" media="(min-width:769px)">
 </video>
 
 <!-- MUSICA -->
@@ -34,7 +35,7 @@
 <!-- INTRO -->
 <div class="intro hidden" id="intro">
     <h1 class="logo shine">Eliu</h1>
-    <p class="presenta">Invita a su graduación</p>
+    <p>Invita a su graduación</p>
 </div>
 
 <!-- CONTENIDO -->

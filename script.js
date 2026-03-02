@@ -8,7 +8,7 @@ const main = document.getElementById("main");
 /* INICIO */
 startBtn.addEventListener("click", () => {
 
-    video.muted = false; // activa sonido
+    video.muted = false;
     video.play();
 
     overlay.classList.add("hidden");
@@ -35,6 +35,7 @@ setInterval(() => {
     const distance = eventDate - now;
 
     if (distance < 0) {
+
         document.getElementById("eventMessage").innerHTML =
             "🎉 ¡Hoy es el gran día! 🎉";
 
@@ -42,6 +43,7 @@ setInterval(() => {
             startFireworks();
             fireworksStarted = true;
         }
+
         return;
     }
 
@@ -81,11 +83,12 @@ for (let i = 0; i < 60; i++) {
     });
 }
 
-function animate() {
+function animateParticles(){
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     particles.forEach(p => {
+
         p.y -= p.speed;
         if (p.y < 0) p.y = canvas.height;
 
@@ -95,12 +98,12 @@ function animate() {
         ctx.fill();
     });
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateParticles);
 }
-animate();
+animateParticles();
 
 /* FUEGOS */
-function startFireworks() {
+function startFireworks(){
 
     const fwCanvas = document.getElementById("fireworks");
     const fwCtx = fwCanvas.getContext("2d");
@@ -110,12 +113,13 @@ function startFireworks() {
 
     let fireworks = [];
 
-    function createFirework() {
+    function createFirework(){
 
         let x = Math.random() * fwCanvas.width;
         let y = Math.random() * fwCanvas.height / 2;
 
         for (let i = 0; i < 30; i++) {
+
             fireworks.push({
                 x: x,
                 y: y,
@@ -128,11 +132,12 @@ function startFireworks() {
         }
     }
 
-    function animateFireworks() {
+    function animateFireworks(){
 
         fwCtx.clearRect(0, 0, fwCanvas.width, fwCanvas.height);
 
         fireworks.forEach((p, index) => {
+
             p.x += p.speedX;
             p.y += p.speedY;
             p.life--;
