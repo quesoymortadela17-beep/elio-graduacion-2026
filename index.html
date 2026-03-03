@@ -1,96 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graduación 2026 - Eliu</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Graduación - Eliú 🎓</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
-
 <body>
+    <!-- Fondo con sparkles -->
+    <div class="sparkle-bg"></div>
 
-<!-- VIDEO RESPONSIVE -->
-<video id="videoBg" class="video-bg" muted playsinline>
-    <source src="video-vertical.mp4" type="video/mp4" media="(max-width:768px)">
-    <source src="video-horizontal.mp4" type="video/mp4" media="(min-width:769px)">
-</video>
-
-<!-- MUSICA -->
-<audio id="musicaBg">
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<!-- PARTICULAS -->
-<canvas id="particles"></canvas>
-
-<!-- FUEGOS -->
-<canvas id="fireworks"></canvas>
-
-<!-- BOTON INICIO -->
-<div class="sound-overlay" id="soundOverlay">
-    <button id="startBtn">🎓 Entrar a la Invitación</button>
-</div>
-
-<!-- INTRO -->
-<div class="intro hidden" id="intro">
-    <h1 class="logo shine">Eliu</h1>
-    <p>Invita a su graduación</p>
-</div>
-
-<!-- CONTENIDO -->
-<div class="main hidden" id="main">
-
-<section class="hero">
-    <h2>Graduación 2026</h2>
-    <p class="frase">Después de años de esfuerzo… llegó el gran día.</p>
-</section>
-
-<section class="info">
-    <p>📅 13 de marzo</p>
-    <p>🕒 7:00 PM</p>
-</section>
-
-<section class="countdown">
-    <h3>Faltan:</h3>
-    <div class="time-boxes">
-        <div><span id="days">0</span><small>Días</small></div>
-        <div><span id="hours">0</span><small>Horas</small></div>
-        <div><span id="minutes">0</span><small>Min</small></div>
-        <div><span id="seconds">0</span><small>Seg</small></div>
+    <!-- Pantalla inicial -->
+    <div id="initial-screen" class="initial-screen">
+        <h1>Te invito a mi Graduación</h1>
+        <p>Un momento especial para celebrar juntos</p>
+        <button id="start-btn">Comenzar</button>
     </div>
-    <p id="eventMessage"></p>
-</section>
 
-<section class="dresscode">
-    <h3>Dress Code</h3>
-    <p>Vestimenta Casual 👕👖</p>
-</section>
+    <!-- Cortinas -->
+    <div id="curtain-container" class="curtain-container">
+        <div class="curtain left"></div>
+        <div class="curtain right"></div>
+    </div>
 
-<section class="sobre">
-    <h3>Sobre Cerrado</h3>
-    <p>Si deseas obsequiar algo, será recibido en sobre cerrado 💌</p>
-</section>
+    <!-- Contenido principal -->
+    <div id="main-content" class="main-content">
+        <header>
+            <h1>Graduación Eliú</h1>
+            <p class="subtitle">¡Celebremos este logro juntos!</p>
+        </header>
 
-<section class="location">
-    <h3>Ubicación</h3>
-    <p>615 La Libertad</p>
-    <p>Calle 42 entre El Oro y Vacas Galindo</p>
+        <section class="countdown-section">
+            <h2>Conteo Regresivo</h2>
+            <div class="countdown">
+                <div><span id="days">0</span><br>Días</div>
+                <div><span id="hours">0</span><br>Horas</div>
+                <div><span id="minutes">0</span><br>Minutos</div>
+                <div><span id="seconds">0</span><br>Segundos</div>
+            </div>
+        </section>
 
-    <a href="https://www.google.com/maps/search/?api=1&query=615+La+Libertad"
-       target="_blank"
-       class="map-btn">
-        📍 Ver Ubicación
-    </a>
-</section>
+        <section class="details">
+            <p>Queridos amigos y familia,</p>
+            <p>Con inmensa alegría los invito a una comida especial para celebrar mi graduación.</p>
+            <ul>
+                <li><strong>Fecha:</strong> Viernes 13 de marzo de 2026</li>
+                <li><strong>Hora:</strong> 8:00 pm</li>
+                <li><strong>Lugar:</strong> La Libertad 615, Guayaquil</li>
+                <li><strong>Dress code:</strong> Elegante casual</li>
+            </ul>
+            <p>¡Será un honor tenerlos conmigo!</p>
+            <p class="signature">Con cariño,<br>Eliú 🎓✨</p>
+        </section>
 
-<section class="rsvp">
-    <h3>Confirmar Asistencia</h3>
-    <button class="rsvp-btn" id="rsvpBtn">Confirmar Ahora 🎓</button>
-</section>
+        <section class="map-section">
+            <h2>Mapa del Lugar</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.058!2d-79.939517!3d-2.2023976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d1f0b0b0b0b0b%3A0x0!2sLa+Libertad+615%2C+Guayaquil+090401%2C+Ecuador!5e0!3m2!1ses!2sec!4v1740960000000"
+                width="100%" height="400" style="border:0;border-radius:15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
 
-</div>
+        <section class="music">
+            <audio id="bg-music" loop>
+                <source src="musica.mp3" type="audio/mpeg">
+            </audio>
+            <button id="music-btn">Reproducir Música</button>
+        </section>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
